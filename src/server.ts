@@ -1,5 +1,3 @@
-console.log("Everything is fine");
-
 import app from "./app";
 
 const port = process.env.PORT || 3333;
