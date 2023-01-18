@@ -36,8 +36,11 @@ export const userController = {
     const users = await prisma.user.findMany({
       where: {
         fName: {
-          startsWith: q,
+          contains: q,
         },
+        lName : {
+          contains : q
+        }
       },
     });
     return res.json({
