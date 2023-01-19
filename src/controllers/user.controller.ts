@@ -29,7 +29,7 @@ export const userController = {
         id: paramId,
       },
     });
-    return res.json(user);
+    return res.json({ success: true, payload: user });
   },
   async search(req: Request, res: Response) {
     const q = req.params.query;
@@ -48,11 +48,13 @@ export const userController = {
         // },
       },
     });
-    return res.json(users);
+    return res.json({
+      success: true,
+      payload: users,
+    });
   },
   async updateUser(req: Request, res: Response) {
     const paramId = req.params.id;
-    const userData = req.body;
     const updatedUser = await prisma.user.update({
       where: {
         id: paramId,
@@ -62,11 +64,9 @@ export const userController = {
       },
     });
     return res.json({
-      message: {
-        type: "success",
-        content: "User was updated successfully",
-      },
-      updatedUser,
+      success: true,
+      payload: updatedUser,
+      message: "User was updated successfully",
     });
   },
   async deleteUser(req: Request, res: Response) {
@@ -77,11 +77,9 @@ export const userController = {
       },
     });
     return res.json({
-      message: {
-        type: "success",
-        content: "User was deleted successfully",
-      },
-      deletedUser,
+      success: true,
+      payload: deletedUser,
+      message: "User was deleted successfully",
     });
   },
 };
