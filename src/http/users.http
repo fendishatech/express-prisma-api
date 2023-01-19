@@ -1,0 +1,38 @@
+# STORE A USER
+###
+POST http://localhost:3333/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "fName" : "Sersi",
+    "lName" : "Lanister"
+}
+
+# GET ALL USERS
+###
+GET http://localhost:3333/api/users HTTP/1.1
+
+# GET USER BY ID
+###
+GET http://localhost:3333/api/users/cld29x2aw0000ur0cg41uh4r3 HTTP/1.1
+
+# SEARCH USER 
+###
+GET http://localhost:3333/api/users/search/k HTTP/1.1
+
+# UPDATE USER
+###
+PUT http://localhost:3333/api/users/cld2etdp60000urw8ygzsturt HTTP/1.1
+content-type: application/json
+
+{
+    "fName" : "Tyrion",
+    "lName" : "Lanisters"
+}
+
+# DELETE USER
+###
+DELETE http://localhost:3333/api/users/cld2cjzr10000uroo8mwypm4g HTTP/1.1
+
+# ADD FRIEND TO USER
+# GET USER FRIENDS
