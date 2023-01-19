@@ -38,14 +38,6 @@ export const userController = {
         fName: {
           startsWith: q,
         },
-        // OR: {
-        //   fName: {
-        //     startsWith: q,
-        //   },
-        //   lName: {
-        //     startsWith: q,
-        //   },
-        // },
       },
     });
     return res.json({
