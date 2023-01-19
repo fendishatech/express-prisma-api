@@ -35,15 +35,18 @@ export const userController = {
     const q = req.params.query;
     const users = await prisma.user.findMany({
       where: {
-        OR : [
+        OR: [
           {
             fName: {
-          contains: q,
-        },
-        lName : {
-          contains : q
-        }
-      }]
+              contains: q,
+            },
+          },
+          {
+            lName: {
+              contains: q,
+            },
+          },
+        ],
       },
     });
     return res.json({
