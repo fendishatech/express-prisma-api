@@ -26,8 +26,7 @@ PUT http://localhost:3333/api/users/cld2etdp60000urw8ygzsturt HTTP/1.1
 content-type: application/json
 
 {
-    "fName" : "Tyrion",
-    "lName" : "Lanisters"
+    "lName" : "Stark"
 }
 
 # DELETE USER
